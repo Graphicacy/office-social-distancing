@@ -1,9 +1,10 @@
 import debounce from 'lodash.debounce';
 import { useState, useLayoutEffect, useCallback } from 'react';
 
-export const xAccessor = d => +d.properties.radii;
-export const idAccessor = d => d.properties.id;
-export const dateAccessor = d => d.properties.synoptime;
+export const xAccessor = d => +d.location.x;
+export const yAccessor = d => +d.location.y;
+export const idAccessor = d => d.id;
+export const dateAccessor = d => d.dt;
 
 function getDimensionObject(node) {
   const rect = node.getBoundingClientRect();

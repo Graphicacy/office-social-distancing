@@ -1,6 +1,8 @@
 import { initialState } from '../state/global';
 import { getData } from '../api';
 import { IS_CLICKED } from '../../constant';
+import { nest } from 'd3-collection';
+import { dateAccessor } from '../../utils';
 
 // Actions
 const TOGGLE_LOADING_ICON = 'TOGGLE_LOADING_ICON';
@@ -44,9 +46,17 @@ const handleCurrentIndex = state => {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_DATA:
+      console.log(
+        nest()
+          .key(dateAccessor)
+          .entries(action.data),
+      );
       return {
         ...state,
         data: action.data,
+        nestedData: nest()
+          .key(dateAccessor)
+          .entries(action.data),
       };
     case UPDATE_TOOLTIP:
       return {
