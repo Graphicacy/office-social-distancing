@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { retrieveData } from '../../redux/modules/global';
 import Brush from './Brush';
 import Visualization from './Visualization';
+import Legend from './Legend';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -18,11 +19,12 @@ const App = () => {
   return (
     <div className="main">
       <Tooltip />
+      <h3>An examination of individuals moving throughout an office space over 10 minutes</h3>
       {!isLoading ? (
         <>
+          <Legend />
           <Visualization />
           <div className="footer">
-            <p className="citation">Data Source: [Insert data source here]</p>
             <Brush />
           </div>
         </>

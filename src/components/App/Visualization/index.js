@@ -1,8 +1,12 @@
 import React from 'react';
-import { useDimensions } from '../../../utils';
+import { idAccessor, useDimensions } from '../../../utils';
+import { useSelector } from 'react-redux';
+import mostRecentDataSelector from '../../../redux/selectors/most.recent.data.selector';
+import Marker from './Marker';
 
 const Visualization = ({ margin }) => {
   const [chartRef, { width, height }] = useDimensions({ width: 800, height: 800 });
+  const data = useSelector(mostRecentDataSelector);
   // const getInnerWidth = () => width - margin.left - margin.right;
   // const getInnerHeight = () => height - margin.top - margin.bottom;
 
@@ -10,7 +14,9 @@ const Visualization = ({ margin }) => {
     <div className="visualization" ref={chartRef}>
       <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
         <g transform={`translate(${margin.left},${margin.right})`}>
-          <circle cx={width / 2} cy={height / 2} r={25} />
+          {data.map(d => {
+            return <Marker key={idAccessor(d)} item={d} />;
+          })}
         </g>
       </svg>
     </div>
@@ -19,10 +25,10 @@ const Visualization = ({ margin }) => {
 
 Visualization.defaultProps = {
   margin: {
-    left: 60,
-    right: 60,
-    top: 60,
-    bottom: 60,
+    left: 20,
+    right: 20,
+    top: 20,
+    bottom: 20,
   },
 };
 export default Visualization;

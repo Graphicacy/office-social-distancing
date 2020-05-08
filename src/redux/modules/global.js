@@ -1,8 +1,10 @@
 import { initialState } from '../state/global';
 import { getData } from '../api';
-import { IS_CLICKED } from '../../constant';
+import { DATE_TIME_FORMAT, IS_CLICKED } from '../../constant';
 import { nest } from 'd3-collection';
 import { dateAccessor } from '../../utils';
+import { ascending } from 'd3-array';
+import moment from 'moment';
 
 // Actions
 const TOGGLE_LOADING_ICON = 'TOGGLE_LOADING_ICON';
@@ -46,17 +48,15 @@ const handleCurrentIndex = state => {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_DATA:
-      console.log(
-        nest()
-          .key(dateAccessor)
-          .entries(action.data),
-      );
+      const nestedData = nest()
+        .key(dateAccessor)
+        .entries(action.data);
+      const timePeriods = nestedData.map(d => moment(d.key, DATE_TIME_FORMAT)).sort(ascending);
       return {
         ...state,
         data: action.data,
-        nestedData: nest()
-          .key(dateAccessor)
-          .entries(action.data),
+        nestedData: nestedData,
+        timePeriods,
       };
     case UPDATE_TOOLTIP:
       return {

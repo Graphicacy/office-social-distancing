@@ -5,6 +5,9 @@ export const xAccessor = d => +d.location.x;
 export const yAccessor = d => +d.location.y;
 export const idAccessor = d => d.id;
 export const dateAccessor = d => d.dt;
+export const colorAccessor = d => d.type.color;
+export const nameAccessor = d => d.type.name;
+export const typeAccessor = d => d.type;
 
 function getDimensionObject(node) {
   const rect = node.getBoundingClientRect();

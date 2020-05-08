@@ -9,7 +9,7 @@ const timePeriodsSelector = state => state.global.timePeriods;
 const mostRecentDataSelector = createSelector(
   [nestedDataSelector, currentIndexSelector, timePeriodsSelector],
   (data, currentIndex, timePeriods) => {
-    const xs = data.filter(d => moment(d.key, DATE_TIME_FORMAT).isSameOrBefore(moment(timePeriods[currentIndex], DATE_TIME_FORMAT)));
+    const xs = data.filter(d => moment(d.key, DATE_TIME_FORMAT).isSame(moment(timePeriods[currentIndex], DATE_TIME_FORMAT)));
     return xs
       ? [].concat.apply(
           [],
