@@ -8,6 +8,7 @@
   #legend {
     display: flex;
     flex-direction: row;
+
     .row {
       align-items: center;
       margin-right: 10px;
@@ -27,7 +28,7 @@
 
   .visualization {
     width: 100%;
-    height: 600px;
+    height: 900px;
   }
 
   .row {

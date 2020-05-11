@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import mostRecentDataSelector from '../../../redux/selectors/most.recent.data.selector';
 import Marker from './Marker';
 import Contours from './Contours';
+import WayFinding from './WayFinding';
 
 const Visualization = ({ margin }) => {
   const [chartRef, { width, height }] = useDimensions({ width: 800, height: 800 });
@@ -19,6 +20,7 @@ const Visualization = ({ margin }) => {
           {data.map(d => {
             return <Marker key={idAccessor(d)} item={d} />;
           })}
+          <WayFinding />
         </g>
       </svg>
     </div>
