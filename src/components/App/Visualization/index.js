@@ -5,6 +5,7 @@ import mostRecentDataSelector from '../../../redux/selectors/most.recent.data.se
 import Marker from './Marker';
 import Contours from './Contours';
 import WayFinding from './WayFinding';
+import CustomMarker from './CustomMarker';
 
 const Visualization = ({ margin }) => {
   const [chartRef, { width, height }] = useDimensions({ width: 800, height: 800 });
@@ -17,10 +18,13 @@ const Visualization = ({ margin }) => {
       <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
         <g transform={`translate(${margin.left},${margin.right})`}>
           <Contours items={data} size={[getInnerWidth(), getInnerHeight()]} />
+          {/*{data.map(d => {*/}
+          {/*  return <Marker key={idAccessor(d)} item={d} />;*/}
+          {/*})}*/}
           {data.map(d => {
-            return <Marker key={idAccessor(d)} item={d} />;
+            return <CustomMarker key={idAccessor(d)} item={d} />;
           })}
-          <WayFinding />
+          {/*<WayFinding />*/}
         </g>
       </svg>
     </div>
