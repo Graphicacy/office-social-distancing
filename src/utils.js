@@ -3,12 +3,10 @@ import { useState, useLayoutEffect, useCallback } from 'react';
 
 export const xAccessor = d => +d.location.x;
 export const yAccessor = d => +d.location.y;
-export const transformAccessor = d => d.location;
 export const idAccessor = d => d.id;
 export const dateAccessor = d => d.dt;
 export const colorAccessor = d => d.type.color;
 export const nameAccessor = d => d.type.name;
-export const typeAccessor = d => d.type;
 
 export const moveToPointAtLength = (node, l) => {
   const p = node.getPointAtLength(l);

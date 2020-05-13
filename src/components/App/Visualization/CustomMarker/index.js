@@ -16,10 +16,10 @@ const CustomMarker = ({ item }) => {
 
   return (
     <g className="custom-marker" ref={markerRef}>
-      <circle className="marker" r={RADIUS} style={{ fill: 'red' }} />
-      <circle className="marker" r={RADIUS / 2} style={{ fill: 'orange' }} />
-      <circle className="marker" r={RADIUS / 4} style={{ fill: 'yellow' }} />
-      <circle className="marker" r={RADIUS / 6} style={{ fill: 'green' }} />
+      <circle className="marker" r={RADIUS} style={{ fill: 'red', fillOpacity: '.6' }} />
+      {/*<circle className="marker" r={RADIUS / 2} style={{ fill: 'orange' }} />*/}
+      {/*<circle className="marker" r={RADIUS / 4} style={{ fill: 'yellow' }} />*/}
+      {/*<circle className="marker" r={RADIUS / 6} style={{ fill: 'green' }} />*/}
     </g>
   );
 };

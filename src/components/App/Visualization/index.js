@@ -1,12 +1,9 @@
 import React, { useCallback, useEffect, useRef } from 'react';
-import { idAccessor } from '../../../utils';
 import { useDispatch, useSelector } from 'react-redux';
 import mostRecentDataSelector from '../../../redux/selectors/most.recent.data.selector';
-import Marker from './Marker';
 import Contours from './Contours';
-import CustomMarker from './CustomMarker';
 import { retrieveData } from '../../../redux/modules/global';
-import { ReactComponent as WhiteHouse } from '../../../assets/data/White_House_West_Wing_FloorPlan1-updated-01.svg';
+import { ReactComponent as WhiteHouse } from '../../../assets/data/White_House_West_Wing_FloorPlan1-updated-02-01.svg';
 import { select } from 'd3-selection';
 
 const Visualization = ({ margin }) => {
@@ -21,7 +18,9 @@ const Visualization = ({ margin }) => {
 
   useEffect(() => {
     if (pathRef) {
-      getData(select(pathRef.current).node());
+      const node = select(pathRef.current);
+      node.style('stroke', 'none');
+      getData(node.node());
     }
   }, [pathRef]);
 
@@ -30,16 +29,14 @@ const Visualization = ({ margin }) => {
       <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
         <g transform={`translate(${margin.left},${margin.right})`}>
           <Contours items={data} size={[getInnerWidth(), getInnerHeight()]} />
-          {/*{data.map(d => {*/}
-          {/*  return <Marker key={idAccessor(d)} item={d} />;*/}
-          {/*})}*/}
-          {data.map(d => {
-            return <CustomMarker key={idAccessor(d)} item={d} />;
-          })}
         </g>
         <WhiteHouse />
         <g id="way-finding-path">
-          <path ref={pathRef} className="cls-13" d="M203.21 251.17 203.21 397.27 216.67 397.27 216.67 444.23 406.28 444.23" />
+          <path
+            ref={pathRef}
+            className="cls-13"
+            d="M203.21,251.17v146.1h13.46v47H470V418.67L432.83,381.5h-87.2V312.4H495.18V220.56h13.66V203.47H645.37V150.4H843.19"
+          />
         </g>
       </svg>
     </div>
