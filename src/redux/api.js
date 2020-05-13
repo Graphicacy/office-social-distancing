@@ -1,14 +1,17 @@
 import moment from 'moment';
 import { range } from 'd3-array';
 import { DATE_TIME_FORMAT } from '../constant';
+import { moveToPointAtLength } from '../utils';
 
-export const getData = () => {
+const NUM_PEOPLE = 5;
+export const getData = node => {
   return new Promise((resolve, reject) => {
     return resolve(
       [].concat.apply(
         [],
         range(10).map(i => {
-          return range(20).map(user => {
+          return range(NUM_PEOPLE).map(user => {
+            let [x, y] = moveToPointAtLength(node, (node.getTotalLength() / NUM_PEOPLE) * user);
             let type;
             switch (user % 4) {
               case 1:
@@ -32,8 +35,8 @@ export const getData = () => {
               type,
               id: `individual-${user}`,
               location: {
-                x: Math.random() * 800,
-                y: Math.random() * 500,
+                x,
+                y,
               },
             };
           });

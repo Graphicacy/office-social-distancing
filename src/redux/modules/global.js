@@ -93,12 +93,12 @@ function toggleLoadingIcon(x) {
   };
 }
 
-export function retrieveData() {
+export function retrieveData(node) {
   return async dispatch => {
     dispatch(toggleLoadingIcon(true));
 
     try {
-      const data = await getData();
+      const data = await getData(node);
       dispatch({
         type: UPDATE_DATA,
         data,
