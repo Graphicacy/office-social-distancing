@@ -37,6 +37,12 @@ export const getData = node => {
               [x, y] = moveToPointAtLength(node, l);
               userMap.set(user, { l, reverse });
             }
+
+            if (user === NUM_PEOPLE - 1) {
+              x = 541.95;
+              y = 532.84;
+            }
+
             return {
               dt: moment()
                 .startOf('day')
