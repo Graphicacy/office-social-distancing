@@ -1,10 +1,8 @@
 import moment from 'moment';
 import { range } from 'd3-array';
-import { DATE_TIME_FORMAT } from '../constant';
+import { DATE_TIME_FORMAT, NUM_PEOPLE, TIME_PERIODS } from '../constant';
 import { moveToPointAtLength } from '../utils';
 
-const NUM_PEOPLE = 15;
-const TIME_PERIODS = 20;
 export const getData = node => {
   return new Promise((resolve, reject) => {
     const userMap = new Map();

@@ -18,8 +18,8 @@ const Tooltip = () => {
           <div className="inner-contents">
             <div className="column">
               <h5>{dt.format('MMM DD, YYYY @ hh a')}</h5>
-              <div className="title"></div>
-              <div className="title"></div>
+              <div className="title" />
+              <div className="title" />
             </div>
           </div>
         </div>

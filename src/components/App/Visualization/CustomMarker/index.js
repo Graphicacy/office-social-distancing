@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { colorAccessor, xAccessor, yAccessor } from '../../../../utils';
+import { xAccessor, yAccessor } from '../../../../utils';
 import { DURATION, RADIUS } from '../../../../constant';
 import 'd3-transition';
 import { select } from 'd3-selection';

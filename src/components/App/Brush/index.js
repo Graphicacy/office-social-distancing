@@ -38,7 +38,7 @@ const Brush = () => {
         value: idx,
       });
     },
-    [dispatch],
+    [dispatch, marks],
   );
 
   const updateOnDrag = (evt, newValue) => {

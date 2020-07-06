@@ -1,6 +1,10 @@
 export const DURATION = 1000;
 export const RADIUS = 10;
+export const WIDTH = 900;
+export const HEIGHT = 600;
 export const IS_CLICKED = 'isClicked';
 export const IS_SELECTED = 'isSelected';
 export const DATE_TIME_FORMAT = 'YYYY-MM-DD h:mm';
 export const DISPLAY_DATE_FORMAT = 'MMM DD, YYYY h:mm a';
+export const NUM_PEOPLE = 15;
+export const TIME_PERIODS = 20;
