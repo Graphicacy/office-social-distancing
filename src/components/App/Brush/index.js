@@ -61,21 +61,25 @@ const Brush = () => {
 
   return (
     <div id="brush">
-      {isPlaying ? <PauseCircleOutline fontSize={'large'} onClick={stop} /> : <PlayCircleOutline fontSize={'large'} onClick={start} />}
-      <div className="label">{minValue.format('MMM DD')}</div>
-      <Slider
-        value={moment(timePeriods[localValue], DATE_TIME_FORMAT).valueOf()}
-        onChangeCommitted={updateCurrentIndexOnDragEnd}
-        onChange={updateOnDrag}
-        valueLabelDisplay="on"
-        valueLabelFormat={x => moment(x).format(DISPLAY_DATE_FORMAT)}
-        aria-labelledby="discrete-slider-restrict"
-        min={minValue.valueOf()}
-        max={maxValue.valueOf()}
-        step={null}
-        marks={marks}
-      />
-      <div className="label">{maxValue.format('MMM DD')}</div>
+      <div className="row">
+        {isPlaying ? <PauseCircleOutline fontSize={'large'} onClick={stop} /> : <PlayCircleOutline fontSize={'large'} onClick={start} />}
+      </div>
+      <div className="row">
+        <div className="label">{minValue.format('HH:mm a')}</div>
+        <Slider
+          value={moment(timePeriods[localValue], DATE_TIME_FORMAT).valueOf()}
+          onChangeCommitted={updateCurrentIndexOnDragEnd}
+          onChange={updateOnDrag}
+          valueLabelDisplay="off"
+          valueLabelFormat={x => moment(x).format(DISPLAY_DATE_FORMAT)}
+          aria-labelledby="discrete-slider-restrict"
+          min={minValue.valueOf()}
+          max={maxValue.valueOf()}
+          step={null}
+          marks={marks}
+        />
+        <div className="label">{maxValue.format('HH:mm a')}</div>
+      </div>
     </div>
   );
 };

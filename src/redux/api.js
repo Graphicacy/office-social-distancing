@@ -10,7 +10,7 @@ export const getData = node => {
     return resolve(
       [].concat.apply(
         [],
-        range(TIME_PERIODS).map(i => {
+        range(TIME_PERIODS + 1).map(i => {
           return range(NUM_PEOPLE).map(user => {
             let x,
               y,

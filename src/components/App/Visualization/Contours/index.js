@@ -3,7 +3,7 @@ import { xAccessor, yAccessor } from '../../../../utils';
 import { contourDensity } from 'd3-contour';
 import { geoPath } from 'd3-geo';
 import { scaleSequential } from 'd3-scale';
-import { interpolateYlGnBu } from 'd3-scale-chromatic';
+import { interpolateYlOrBr } from 'd3-scale-chromatic';
 import { max } from 'd3-array';
 import Contour from './Contour';
 
@@ -15,7 +15,7 @@ const Contours = ({ items, size }) => {
     .y(yAccessor)
     .size(size)(items);
 
-  const color = scaleSequential(interpolateYlGnBu).domain([0, max(xs, x => x.value)]); // Points per square pixel.
+  const color = scaleSequential(interpolateYlOrBr).domain([0, max(xs, x => x.value)]); // Points per square pixel.
 
   return (
     <g className="contours">

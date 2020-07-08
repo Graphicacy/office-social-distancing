@@ -1,39 +1,51 @@
 #brush {
   width: 60%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  margin-top: 41.5px;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 
   .label {
-    font-size: 14px;
-    width: 50px;
+    font-size: 18px;
+    color: #4d4d4d;
+    width: 125px;
   }
 
   .MuiSvgIcon-root {
     cursor: pointer;
+    fill: #4d4d4d;
+    margin-bottom: 10px;
   }
 
   .MuiSlider-root {
-    margin: 0 16px;
+    margin: 0 8px;
 
     .MuiSlider-rail {
-      height: 8px;
+      height: 10px;
       border-radius: 4px;
       background-color: #d8d8d8;
     }
 
     .MuiSlider-track {
-      height: 8px;
+      height: 10px;
       border-radius: 4px;
-      background-color: steelblue;
+      background-color: #4d4d4d;
     }
 
     .MuiSlider-thumb {
-      width: 20px;
-      height: 20px;
-      border: solid 1px #6b6f7b;
+      width: 25px;
+      height: 25px;
+      border: solid 2px #6b6f7b;
       background-color: #ffffff;
-      margin-top: -7px;
+      margin-top: -8px;
       margin-left: -10px;
     }
 
