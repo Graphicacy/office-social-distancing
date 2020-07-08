@@ -3,7 +3,6 @@ export const initialState = {
   nestedData: null,
   isLoading: true,
   showError: false,
-  tooltip: null,
   currentIndex: 0,
   timePeriods: [],
 };

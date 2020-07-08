@@ -6,8 +6,17 @@ import { retrieveData } from '../../../redux/modules/global';
 import { ReactComponent as OfficeFloorPlan } from '../../../assets/data/sample-office-floor-plan-with-path-01.svg';
 import { select } from 'd3-selection';
 import { HEIGHT, WIDTH } from '../../../constant';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(() => ({
+  visualization: {
+    width: '100%',
+    height: '600px',
+  },
+}));
 
 const Visualization = ({ margin }) => {
+  const classes = useStyles();
   const [width, height] = [WIDTH, HEIGHT];
   const pathRef = useRef(null);
   const data = useSelector(mostRecentDataSelector);
@@ -26,7 +35,7 @@ const Visualization = ({ margin }) => {
   }, [pathRef, getData]);
 
   return (
-    <div className="visualization">
+    <div className={classes.visualization}>
       <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
         <g transform={`translate(${margin.left},${margin.right})`}>
           <Contours items={data} size={[getInnerWidth(), getInnerHeight()]} />

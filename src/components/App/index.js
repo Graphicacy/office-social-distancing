@@ -1,16 +1,54 @@
 import React from 'react';
-import Tooltip from './Tooltip';
 import Brush from './Brush';
 import Visualization from './Visualization';
-import { NUM_PEOPLE } from '../../constant';
+import { NUM_PEOPLE, TIME_PERIODS } from '../../constant';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(() => ({
+  main: {
+    width: '900px',
+    height: 'calc(100vh * 0.9)',
+    margin: '0 auto',
+    display: 'flex',
+    textAlign: 'center',
+    flexDirection: 'column',
+  },
+  title: {
+    fontSize: '30px',
+    color: '#4D4D5D',
+    fontWeight: 500,
+    marginTop: 0,
+    marginBottom: '15px',
+  },
+  subTitle: {
+    margin: 0,
+    fontSize: '18px',
+    color: '#4D4D4D',
+    fontWeight: 'normal',
+    marginBottom: '35px',
+    '& span': {
+      color: '#B40015',
+    },
+  },
+  footer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    width: '100%',
+  },
+}));
 
 const App = () => {
+  const classes = useStyles();
   return (
-    <div className="main">
-      <Tooltip />
-      <h3>{`An examination of ${NUM_PEOPLE} individuals moving throughout a sample floor plan over a 10 minute period`}</h3>
+    <div className={classes.main}>
+      <h2 className={classes.title}>How it may look like when we return to the office in the Fall?</h2>
+      <h3 className={classes.subTitle}>
+        An examination of <span>{`${NUM_PEOPLE} individuals`}</span> moving throughout a sample floor plan over a{' '}
+        <span>{` ${TIME_PERIODS} minute period`}</span>
+      </h3>
       <Visualization />
-      <div className="footer">
+      <div className={classes.footer}>
         <Brush />
       </div>
     </div>
