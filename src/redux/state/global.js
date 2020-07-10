@@ -1,3 +1,6 @@
+import { scaleSequential } from 'd3-scale';
+import { interpolateYlOrBr } from 'd3-scale-chromatic';
+
 export const initialState = {
   data: null,
   nestedData: null,
@@ -5,4 +8,5 @@ export const initialState = {
   showError: false,
   currentIndex: 0,
   timePeriods: [],
+  colorScale: scaleSequential(interpolateYlOrBr),
 };
