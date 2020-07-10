@@ -68,7 +68,7 @@ const App = () => {
           <Brush />
         </div>
         <div className={classes.branding}>
-          <a href="https://graphicacy.com" target="_blank">
+          <a href="https://graphicacy.com" target="_blank" rel="noopener noreferrer">
             <img src={logo} alt="Graphicacy" />
           </a>
         </div>
