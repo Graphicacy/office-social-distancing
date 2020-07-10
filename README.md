@@ -22,6 +22,4 @@ import { ReactComponent as OfficeFloorPlan } from '../../../assets/data/<name-of
 
 ### Using d3-contour for density plot
 
-<img width="925" alt="Screen Shot 2020-07-06 at 4 50 40 PM" src="https://user-images.githubusercontent.com/1707103/86641116-e542e980-bfa8-11ea-9aad-3aa4d192a2d2.png">
-
-### Using custom markers for anonymizing individuals
+<img width="918" alt="Screen Shot 2020-07-10 at 4 22 51 PM" src="https://user-images.githubusercontent.com/1707103/87202000-b345c600-c2cd-11ea-9cce-f09eb90acfaa.png">
