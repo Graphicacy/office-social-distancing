@@ -3,8 +3,8 @@ import Brush from './Brush';
 import Visualization from './Visualization';
 import { NUM_PEOPLE, TIME_PERIODS } from '../../constant';
 import { makeStyles } from '@material-ui/core/styles';
-import { range } from 'd3-array';
-import { useSelector } from 'react-redux';
+import logo from './../../assets/images/graphicacy-logo.png';
+import Legend from './Legend';
 
 const useStyles = makeStyles(() => ({
   main: {
@@ -32,25 +32,10 @@ const useStyles = makeStyles(() => ({
     },
     marginBottom: '20px',
   },
-  legend: {
+  row: {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '350px',
-    marginBottom: '35px',
-    '& span': {
-      color: '#4D4D4D',
-      fontSize: '12px',
-    },
-  },
-  blockGroup: {
-    width: '180px',
-    display: 'flex',
-  },
-  block: {
-    width: '1px',
-    height: '20px',
-    backgroundColor: 'red',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   footer: {
     display: 'flex',
@@ -58,13 +43,16 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
     width: '100%',
   },
+  branding: {
+    marginTop: '25px',
+    '& img': {
+      width: '150px',
+    },
+  },
 }));
 
 const App = () => {
-  const n = 180;
   const classes = useStyles();
-  let colorScale = useSelector(state => state.global.colorScale);
-  colorScale = colorScale.domain([0, n]);
 
   return (
     <div className={classes.main}>
@@ -73,18 +61,17 @@ const App = () => {
         An examination of <span>{`${NUM_PEOPLE} individuals`}</span> moving throughout a sample floor plan over a{' '}
         <span>{` ${TIME_PERIODS} minute period`}</span>
       </h3>
-      <div className={classes.legend}>
-        <span>Lower density</span>
-        <div className={classes.blockGroup}>
-          {range(n).map(d => {
-            return <div className={classes.block} key={`legend-block-for-${d}`} style={{ backgroundColor: colorScale(d) }} />;
-          })}
-        </div>
-        <span>Higher density</span>
-      </div>
+      <Legend />
       <Visualization />
-      <div className={classes.footer}>
-        <Brush />
+      <div className={classes.row}>
+        <div className={classes.footer}>
+          <Brush />
+        </div>
+        <div className={classes.branding}>
+          <a href="https://graphicacy.com" target="_blank">
+            <img src={logo} alt="Graphicacy" />
+          </a>
+        </div>
       </div>
     </div>
   );
