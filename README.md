@@ -1,6 +1,8 @@
 ## Office Social Distancing Prototype
 
-### Steps to replicate
+<img width="918" alt="Screen Shot 2020-07-10 at 4 22 51 PM" src="https://user-images.githubusercontent.com/1707103/87202000-b345c600-c2cd-11ea-9cce-f09eb90acfaa.png">
+
+### Steps to replicate with a new office floor plan
 
 1. Download an office floor plan as a SVG - https://www.smartdraw.com/office-floor-plan/examples/cubicle-floor-plan/
 1. Open Adobe Illustrator
@@ -20,6 +22,9 @@
 import { ReactComponent as OfficeFloorPlan } from '../../../assets/data/<name-of-file>.svg';
 ```
 
-### Using d3-contour for density plot
+### Installation
 
-<img width="918" alt="Screen Shot 2020-07-10 at 4 22 51 PM" src="https://user-images.githubusercontent.com/1707103/87202000-b345c600-c2cd-11ea-9cce-f09eb90acfaa.png">
+```js
+yarn // npm install
+yarn start // npm start
+```
