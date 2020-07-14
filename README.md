@@ -24,6 +24,8 @@ import { ReactComponent as OfficeFloorPlan } from '../../../assets/data/<name-of
 
 ### Installation
 
+Ensure you have `yarn` or `npm` installed.
+
 ```js
 yarn // npm install
 yarn start // npm start
