@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.99b4538b.chunk.css",
-    "main.js": "/static/js/main.21f9ed7a.chunk.js",
-    "main.js.map": "/static/js/main.21f9ed7a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.e77fe793.js",
-    "runtime-main.js.map": "/static/js/runtime-main.e77fe793.js.map",
-    "static/js/2.d73cb6ff.chunk.js": "/static/js/2.d73cb6ff.chunk.js",
-    "static/js/2.d73cb6ff.chunk.js.map": "/static/js/2.d73cb6ff.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.1a7ebcf2ec66720882bb8a8e479c3d7f.js": "/precache-manifest.1a7ebcf2ec66720882bb8a8e479c3d7f.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.99b4538b.chunk.css.map": "/static/css/main.99b4538b.chunk.css.map",
-    "static/js/2.d73cb6ff.chunk.js.LICENSE.txt": "/static/js/2.d73cb6ff.chunk.js.LICENSE.txt",
-    "static/media/graphicacy-logo.png": "/static/media/graphicacy-logo.378b01c9.png",
-    "static/media/sample-office-floor-plan-with-path-01.9843d692.svg": "/static/media/sample-office-floor-plan-with-path-01.9843d692.svg"
+    "main.css": "/office-social-distancing/static/css/main.99b4538b.chunk.css",
+    "main.js": "/office-social-distancing/static/js/main.21f9ed7a.chunk.js",
+    "main.js.map": "/office-social-distancing/static/js/main.21f9ed7a.chunk.js.map",
+    "runtime-main.js": "/office-social-distancing/static/js/runtime-main.a9ecc6ec.js",
+    "runtime-main.js.map": "/office-social-distancing/static/js/runtime-main.a9ecc6ec.js.map",
+    "static/js/2.d73cb6ff.chunk.js": "/office-social-distancing/static/js/2.d73cb6ff.chunk.js",
+    "static/js/2.d73cb6ff.chunk.js.map": "/office-social-distancing/static/js/2.d73cb6ff.chunk.js.map",
+    "index.html": "/office-social-distancing/index.html",
+    "precache-manifest.60812a065b5d54522984f398b8bc972e.js": "/office-social-distancing/precache-manifest.60812a065b5d54522984f398b8bc972e.js",
+    "service-worker.js": "/office-social-distancing/service-worker.js",
+    "static/css/main.99b4538b.chunk.css.map": "/office-social-distancing/static/css/main.99b4538b.chunk.css.map",
+    "static/js/2.d73cb6ff.chunk.js.LICENSE.txt": "/office-social-distancing/static/js/2.d73cb6ff.chunk.js.LICENSE.txt",
+    "static/media/graphicacy-logo.png": "/office-social-distancing/static/media/graphicacy-logo.378b01c9.png",
+    "static/media/sample-office-floor-plan-with-path-01.9843d692.svg": "/office-social-distancing/static/media/sample-office-floor-plan-with-path-01.9843d692.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e77fe793.js",
+    "static/js/runtime-main.a9ecc6ec.js",
     "static/js/2.d73cb6ff.chunk.js",
     "static/css/main.99b4538b.chunk.css",
     "static/js/main.21f9ed7a.chunk.js"
